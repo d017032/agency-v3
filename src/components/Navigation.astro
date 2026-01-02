@@ -1,0 +1,12 @@
+---
+import data from '../data/business-data.json';
+---
+<nav class="flex justify-between p-6 bg-white border-b">
+  <span class="font-bold">{data.businessName}</span>
+  <div class="flex gap-4">
+    {data.navigation.map(item => <a href={item.href}>{item.label}</a>)}
+  </div>
+  <button class="bg-black text-white px-4 py-2 rounded">
+    {data.cta[data.siteType]}
+  </button>
+</nav>

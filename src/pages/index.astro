@@ -1,11 +1,24 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Navigation from '../components/Navigation.astro';
+import data from '../data/business-data.json';
+import '../styles/global.css';
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>{data.businessName}</title>
+	</head>
+	<body class="bg-slate-50">
+		<Navigation />
+		<main class="py-20 px-6 text-center">
+			<h1 class="text-5xl font-black text-slate-900 tracking-tight">
+				{data.businessName} is Online.
+			</h1>
+			<p class="mt-4 text-slate-600 text-lg">
+				Mode: <span class="uppercase font-bold text-blue-600">{data.siteType}</span>
+			</p>
+		</main>
+	</body>
+</html>

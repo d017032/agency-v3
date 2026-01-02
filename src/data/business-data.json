@@ -1,0 +1,9 @@
+{
+    "businessName": "Agency Zero",
+    "siteType": "service",
+    "navigation": [
+      { "label": "Home", "href": "/" },
+      { "label": "Services", "href": "/services" }
+    ],
+    "cta": { "service": "Book Now", "shop": "Buy Now" }
+  }
