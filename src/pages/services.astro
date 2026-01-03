@@ -1,0 +1,13 @@
+---
+import Layout from '../layouts/Layout.astro';
+import data from '../data/business-data.json';
+---
+
+<Layout title="Our Services">
+	<main class="py-24 px-6 max-w-7xl mx-auto">
+		<h1 class="text-4xl font-bold text-slate-900">Our Services</h1>
+		<p class="mt-4 text-lg text-slate-600">
+            Specialized solutions for our {data.siteType} clients.
+        </p>
+	</main>
+</Layout>

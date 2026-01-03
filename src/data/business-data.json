@@ -1,6 +1,15 @@
-  {
+{
     "businessName": "Agency Zero",
     "siteType": "service",
+    "navigation": [
+      { "label": "Home", "href": "" },
+      { "label": "Services", "href": "services" }
+    ],
+    "cta": { 
+      "service": "Book Now", 
+      "shop": "Buy Now",
+      "portfolio": "View Work"
+    },
     "contact": {
       "email": "hello@agencyzero.com",
       "phone": "+1 (555) 000-0000",
@@ -11,9 +20,18 @@
       { "platform": "LinkedIn", "url": "https://linkedin.com" },
       { "platform": "GitHub", "url": "https://github.com" }
     ],
-    "navigation": [
-      { "label": "Home", "href": "/" },
-      { "label": "Services", "href": "/services" }
-    ],
-    "cta": { "service": "Book Now", "shop": "Buy Now" }
+    "testimonials": [
+      {
+        "name": "Alex Rivera",
+        "role": "CEO, TechFlow",
+        "quote": "This team delivered our site in record time. The performance is unmatched.",
+        "image": "https://i.pravatar.cc/150?u=alex"
+      },
+      {
+        "name": "Sarah Chen",
+        "role": "Founder, Bloom",
+        "quote": "The AI-driven approach they used for our shop simplified everything.",
+        "image": "https://i.pravatar.cc/150?u=sarah"
+      }
+    ]
   }

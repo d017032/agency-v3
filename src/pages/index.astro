@@ -1,17 +1,14 @@
 ---
-import Navigation from '../components/Navigation.astro';
+import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero';
 import Features from '../components/Features';
-import Footer from '../components/Footer.astro'; // Import here
-import '../styles/global.css';
+import Testimonials from '../components/Testimonials';
 ---
 
-<html lang="en">
-	<body class="bg-white">
-		<Navigation />
-		<main>
-			<Hero />
-			<Features />
-		</main>
-		<Footer /> </body>
-</html>
+<Layout title="Home">
+	<main>
+		<Hero />
+		<Features />
+		<Testimonials />
+	</main>
+</Layout>

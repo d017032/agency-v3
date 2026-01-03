@@ -1,12 +1,34 @@
 ---
 import data from '../data/business-data.json';
+
+// In Astro, import.meta.env.BASE_URL pulls the 'base' value 
+// from your astro.config.mjs (which is '/agency-v3')
+const baseUrl = import.meta.env.BASE_URL;
+
+// Logic to pull the correct CTA text based on site type
+const activeCta = data.cta[data.siteType as keyof typeof data.cta];
 ---
-<nav class="flex justify-between p-6 bg-white border-b">
-  <span class="font-bold">{data.businessName}</span>
-  <div class="flex gap-4">
-    {data.navigation.map(item => <a href={item.href}>{item.label}</a>)}
+
+<nav class="flex items-center justify-between p-6 bg-white border-b border-gray-100">
+  <a href={baseUrl} class="text-xl font-bold text-slate-900">
+    {data.businessName}
+  </a>
+
+  <div class="hidden md:flex gap-6">
+    {data.navigation.map((item) => (
+      <a 
+        href={`${baseUrl}/${item.href}`} 
+        class="text-gray-600 hover:text-black transition-colors"
+      >
+        {item.label}
+      </a>
+    ))}
   </div>
-  <button class="bg-black text-white px-4 py-2 rounded">
-    {data.cta[data.siteType]}
-  </button>
+
+  <a 
+    href={`${baseUrl}/contact`} 
+    class="px-6 py-2 bg-black text-white rounded-full text-sm font-medium hover:bg-gray-800 transition-all"
+  >
+    {activeCta}
+  </a>
 </nav>
