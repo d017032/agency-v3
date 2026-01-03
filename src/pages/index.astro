@@ -1,21 +1,17 @@
 ---
 import Navigation from '../components/Navigation.astro';
 import Hero from '../components/Hero';
-import Features from '../components/Features'; // New Import
+import Features from '../components/Features';
+import Footer from '../components/Footer.astro'; // Import here
 import '../styles/global.css';
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>Million Dollar Template</title>
-	</head>
 	<body class="bg-white">
 		<Navigation />
 		<main>
 			<Hero />
 			<Features />
 		</main>
-	</body>
+		<Footer /> </body>
 </html>
