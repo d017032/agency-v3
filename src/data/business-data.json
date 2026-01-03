@@ -1,6 +1,16 @@
-{
+  {
     "businessName": "Agency Zero",
     "siteType": "service",
+    "contact": {
+      "email": "hello@agencyzero.com",
+      "phone": "+1 (555) 000-0000",
+      "address": "123 Tech Lane, Digital City"
+    },
+    "socials": [
+      { "platform": "Twitter", "url": "https://twitter.com" },
+      { "platform": "LinkedIn", "url": "https://linkedin.com" },
+      { "platform": "GitHub", "url": "https://github.com" }
+    ],
     "navigation": [
       { "label": "Home", "href": "/" },
       { "label": "Services", "href": "/services" }

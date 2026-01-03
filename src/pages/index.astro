@@ -1,6 +1,7 @@
 ---
 import Navigation from '../components/Navigation.astro';
-import data from '../data/business-data.json';
+import Hero from '../components/Hero';
+import Features from '../components/Features'; // New Import
 import '../styles/global.css';
 ---
 
@@ -8,17 +9,13 @@ import '../styles/global.css';
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
-		<title>{data.businessName}</title>
+		<title>Million Dollar Template</title>
 	</head>
-	<body class="bg-slate-50">
+	<body class="bg-white">
 		<Navigation />
-		<main class="py-20 px-6 text-center">
-			<h1 class="text-5xl font-black text-slate-900 tracking-tight">
-				{data.businessName} is Online.
-			</h1>
-			<p class="mt-4 text-slate-600 text-lg">
-				Mode: <span class="uppercase font-bold text-blue-600">{data.siteType}</span>
-			</p>
+		<main>
+			<Hero />
+			<Features />
 		</main>
 	</body>
 </html>
