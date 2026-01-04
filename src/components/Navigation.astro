@@ -1,34 +1,65 @@
 ---
 import data from '../data/business-data.json';
-
-// In Astro, import.meta.env.BASE_URL pulls the 'base' value 
-// from your astro.config.mjs (which is '/agency-v3')
 const baseUrl = import.meta.env.BASE_URL;
-
-// Logic to pull the correct CTA text based on site type
 const activeCta = data.cta[data.siteType as keyof typeof data.cta];
 ---
 
-<nav class="flex items-center justify-between p-6 bg-white border-b border-gray-100">
-  <a href={baseUrl} class="text-xl font-bold text-slate-900">
-    {data.businessName}
-  </a>
+<nav class="p-6 bg-white border-b border-gray-100">
+  <div class="flex items-center justify-between">
+    <a href={baseUrl} class="text-xl font-bold text-slate-900">
+      {data.businessName}
+    </a>
 
-  <div class="hidden md:flex gap-6">
+    <div class="hidden md:flex gap-6">
+      {data.navigation.map((item) => (
+        <a 
+          href={`${baseUrl}/${item.href}`} 
+          class="text-gray-600 hover:text-black transition-colors"
+        >
+          {item.label}
+        </a>
+      ))}
+    </div>
+
+    <div class="flex items-center gap-4">
+      <a 
+        href={`${baseUrl}/contact`} 
+        class="hidden sm:block px-6 py-2 bg-brand-primary text-white rounded-full text-sm font-medium hover:bg-brand-hover transition-all"
+      >
+        {activeCta}
+      </a>
+      
+      <button id="menu-toggle" class="md:hidden p-2 text-gray-600 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-4 pb-4">
     {data.navigation.map((item) => (
       <a 
         href={`${baseUrl}/${item.href}`} 
-        class="text-gray-600 hover:text-black transition-colors"
+        class="block text-gray-600 hover:text-black border-b border-gray-50 pb-2"
       >
         {item.label}
       </a>
     ))}
+    <a 
+      href={`${baseUrl}/contact`} 
+      class="block text-brand-primary font-bold"
+    >
+      {activeCta}
+    </a>
   </div>
-
-  <a 
-    href={`${baseUrl}/contact`} 
-    class="px-6 py-2 bg-black text-white rounded-full text-sm font-medium hover:bg-gray-800 transition-all"
-  >
-    {activeCta}
-  </a>
 </nav>
+
+<script>
+  const btn = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+
+  btn?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+  });
+</script>

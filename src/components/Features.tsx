@@ -29,7 +29,8 @@ export default function Features() {
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((item, index) => (
             <div key={index} className="flex flex-col p-8 bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-              <div className="h-10 w-10 rounded-lg bg-blue-600 mb-6 flex items-center justify-center">
+              {/* Dynamic Branding Applied Below: bg-brand-primary */}
+              <div className="h-10 w-10 rounded-lg bg-brand-primary mb-6 flex items-center justify-center">
                 <div className="h-5 w-5 border-2 border-white rounded-full" />
               </div>
               <h3 className="text-xl font-bold text-slate-900">{item.title}</h3>

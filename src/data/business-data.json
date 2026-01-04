@@ -2,8 +2,9 @@
     "businessName": "Agency Zero",
     "siteType": "service",
     "navigation": [
-      { "label": "Home", "href": "" },
-      { "label": "Services", "href": "services" }
+     { "label": "Home", "href": "" },
+     { "label": "Services", "href": "services" },
+     { "label": "Contact", "href": "contact" }
     ],
     "cta": { 
       "service": "Book Now", 
@@ -33,5 +34,13 @@
         "quote": "The AI-driven approach they used for our shop simplified everything.",
         "image": "https://i.pravatar.cc/150?u=sarah"
       }
-    ]
+    ],
+    "theme": {
+       "primary": "#2563eb", 
+       "primaryHover": "#1d4ed8",
+       "accent": "#eff6ff"
+    },
+    "meta": {
+       "description": "Professional AI-driven web development services for modern businesses. Get your static site live in hours."
+    }
   }
