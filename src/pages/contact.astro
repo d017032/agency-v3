@@ -2,9 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import data from '../data/business-data.json';
 
-// Define the success URL for the redirect
-const baseUrl = import.meta.env.BASE_URL;
-const successUrl = `https://yourusername.github.io${baseUrl}/success`;
+// In Netlify, the success redirect path is relative to your root
+const successPath = "/success";
 ---
 
 <Layout title="Contact Us">
@@ -38,10 +37,18 @@ const successUrl = `https://yourusername.github.io${baseUrl}/success`;
       </div>
 
       <div class="bg-white p-8 border border-slate-200 rounded-2xl shadow-sm">
-        <form action="https://formspree.io/f/YOUR_ID" method="POST" class="space-y-6">
+        <form 
+          name="contact" 
+          method="POST" 
+          data-netlify="true" 
+          action={successPath}
+          class="space-y-6"
+        >
+          <input type="hidden" name="form-name" value="contact" />
           
-          <input type="hidden" name="_next" value={successUrl} />
-          <input type="hidden" name="_subject" value={`New Lead from ${data.businessName}`} />
+          <p class="hidden">
+            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+          </p>
 
           <div>
             <label for="name" class="block text-sm font-medium text-slate-700">Full Name</label>
